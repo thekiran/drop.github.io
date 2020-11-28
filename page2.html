@@ -53,10 +53,10 @@
     <!-- <link rel="stylesheet" href="../shopcustom.css"> -->
     
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" /> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="./styles.css">
-
     
     <style>
         /* The container */
@@ -706,11 +706,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="range-container">
                     <div class="range-head">
                         <h3>Filter:</h3>
-                        <p>$0 - $300</p>
+                        <!-- <p>$0 - $300</p> -->
                     </div>
                     <div class="slidecontainer"> 
-                        <input type="range" min="0" max="300" value="300" class="slider" id="myRange">
-                    </div>
+                        <!-- <input type="range" min="0" max="300" value="300" class="slider" id="myRange"> -->
+                        <div class="range-slider">
+                            <input class="range-slider__range" style="width: 70%; background: #000;" type="range" value="100" min="0" max="500">
+                            <span class="range-slider__value">0</span>
+                          </div>
+                    </div>  
                 </div><!-- .widget .widget_range END -->
                 <div class="screen-cont">
                     <h3>Categories</h3>
@@ -1371,8 +1375,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script type="text/javascript" src="/js/morris.min.js"></script>
 <script type="text/javascript" src="/js/sweetalert2.min.js"></script>
 <script src="/theme/v2/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> -->
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script> -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 <script>
 
     function addProduct(productId) {
@@ -1585,5 +1591,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 </script>
 
+<script>
+
+    var rangeSlider = function(){
+            var slider = $('.range-slider'),
+                range = $('.range-slider__range'),
+                value = $('.range-slider__value');
+                
+            slider.each(function(){
+    
+                value.each(function(){
+                var value = $(this).prev().attr('value');
+                $(this).html(value);
+                });
+    
+                range.on('input', function(){
+                $(this).next(value).html(this.value);
+                });
+            });
+            };
+    
+            rangeSlider();
+    
+    
+    </script>
 </body>
 </html>
