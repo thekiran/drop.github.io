@@ -705,11 +705,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="range-container">
                     <div class="range-head">
                         <h3>Filter:</h3>
-                        <p>$0 - $300</p>
+                        <!-- <p>$0 - $300</p> -->
                     </div>
                     <div class="slidecontainer"> 
-                        <input type="range" min="0" max="300" value="300" class="slider" id="myRange">
-                    </div>
+                        <!-- <input type="range" min="0" max="300" value="300" class="slider" id="myRange"> -->
+                        <div class="range-slider">
+                            <input class="range-slider__range" style="width: 70%; background: #000;" type="range" value="100" min="0" max="500">
+                            <span class="range-slider__value">0</span>
+                          </div>
+                    </div>  
                 </div><!-- .widget .widget_range END -->
                
                 <div class="screen-cont">
@@ -1104,17 +1108,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a class="page-link" href="#"><i class="icon icon-double-angle-pointing-to-right"></i></a>
                 </li>
             </ul>  -->
-                <ul class="pagination justify-content-center">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" aria-label="Previous">
+                <ul class="pagination justify-content-center " style="padding:0 50px;">
+                  <li class="page-item disabled" >
+                    <a class="page-link" style="border-radius: 50%;padding: 10px 15px;" href="#" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
                     </a>
                   </li>
-                  <li class="page-item"><a class="page-link" href="./index.html">1</a></li>
-                  <li class="page-item"><a class="page-link" href="./page2.html">2</a></li>
-                  <!-- <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+                  <li class="page-item active"><a class="page-link" style="border-radius: 50%;padding: 10px 15px;" href="./index.html">1</a></li>
+                  <li class="page-item"><a class="page-link" style="border-radius: 50%;padding: 10px 15px;" href="./page2.html">2</a></li>
+                  <li class="page-item"><a class="page-link" style="border-radius: 50%;padding: 10px 15px;" href="#">3</a></li>
                   <li class="page-item">
-                    <a class="page-link" href="./page2.html" aria-label="Next">
+                    <a class="page-link" style="border-radius: 50%;padding: 10px 15px;" href="./page2.html" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
                     </a>
                   </li>
@@ -1604,6 +1608,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         return url;
     }
 </script>
+<script>
 
+var rangeSlider = function(){
+        var slider = $('.range-slider'),
+            range = $('.range-slider__range'),
+            value = $('.range-slider__value');
+            
+        slider.each(function(){
+
+            value.each(function(){
+            var value = $(this).prev().attr('value');
+            $(this).html(value);
+            });
+
+            range.on('input', function(){
+            $(this).next(value).html(this.value);
+            });
+        });
+        };
+
+        rangeSlider();
+
+
+</script>
 </body>
 </html>
