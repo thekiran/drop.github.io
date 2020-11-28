@@ -696,7 +696,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
               </nav>
-
+              <nav style="width: 100%; margin: 0 auto;" class="navbar navbar-light bg-light">
+                <form class="form-inline">
+                  <input style="width: 75%;" class="form-control mr-sm-2" type="search" placeholder="30" aria-label="Search">
+                  <button class="btn btn-primary my-2 my-sm-0" type="submit">save</button>
+                </form>
+              </nav>
             <div class="shop-category">
                 <div class="range-container">
                     <div class="range-head">
@@ -1083,22 +1088,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
 
-            
             <ul class="pagination justify-content-center">
-                <!-- <li class="page-item disabled">
-                    <a class="page-link" href="#"><i class="icon icon-double-left-chevron"></i></a>
-                </li> -->
-                <li class="page-item "><a class="page-link" href="/index.html">1</a></li>
-                <li class="page-item active">
-                    <a class="page-link" href="/page2.html">2</a>
+                <li class="page-item ">
+                  <a class="page-link" href="./index.html" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
                 </li>
+                <li class="page-item"><a class="page-link" href="./index.html">1</a></li>
+                <li class="page-item active"><a class="page-link " href="./page2.html">2</a></li>
                 <!-- <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-                <!-- <li class="page-item disabled"><a class="page-link" href="page2.html">...</a></li> -->
-                <!-- <li class="page-item"><a class="page-link" href="#">10</a></li> -->
-                <!-- <li class="page-item">
-                    <a class="page-link" href="#"><i class="icon icon-double-angle-pointing-to-right"></i></a>
-                </li> -->
-            </ul>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul> 
         </div>
     </div><!-- .row END -->
 </div><!-- .container END -->
